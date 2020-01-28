@@ -1,0 +1,14 @@
+<application>
+  <component name="PropertiesComponent">
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.6081277" />
+    <property name="Copy.OpenInEditor" value="true" />
+    <property name="PhpStorm.InitialConfiguration" value="true" />
+    <property name="com.intellij.history.integration.ui.views.DirectoryHistoryDialog.0" value="300" />
+    <property name="file.chooser.recent.files" value="/var/www/wp_rada" />
+    <property name="file.gist.reindex.count" value="881" />
+    <property name="ide.memory.adjusted" value="true" />
+    <property name="lastTip" value="1" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+    <property name="ts.lib.d.ts.version" value="3.7.2" />
+  </component>
+</application>
