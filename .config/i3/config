@@ -32,12 +32,23 @@ exec "setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'"
 #shutter
 exec "shutter --min_at_startup"
 bindsym --release Print exec "shutter -s"
+for_window [class="Shutter"] floating enable
+
+#flameshot
+#exec flameshot
+#bindsym --release Print exec "flameshot gui"
+
+
+#copyq
+for_window [class="copyq"] floating enable
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvt
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -100,7 +111,9 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 #volume controll
+bindsym $mod+Ctrl+button4 exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym $mod+Ctrl+Up exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym $mod+Ctrl+button5 exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym $mod+Ctrl+Down exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym $mod+Ctrl+a exec --no-startup-id pactl set-sink-mute 0 toggle
 
