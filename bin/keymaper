@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+text="$(xsel -o)"
+translate=$(curl -d "text=$(echo $text | sed "s/[\"'<>]//g")&lang=eng2rus" -H "Content-Type: application/x-www-form-urlencoded" -X POST https://raskladki.net.ru/post.php)
+echo -e "Original text:" "$text"'\n' > /tmp/notitrans
+echo "Translation:" "$translate" >> /tmp/notitrans
+zenity --text-info --title="Translation" --filename=/tmp/notitrans

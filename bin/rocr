@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#text="$(xsel -o)"
+rm -f /tmp/notitrans
+
+text=`zenity --entry --title="Translation" --text="Слово для перевода"`
+translate="$(wget -U "Mozilla/5.0" -qO - "https://translate.googleapis.com/translate_a/single?client=gtx&sl=ru&tl=en&hl=ru&dt=t&dt=bd&dj=1&source=icon&tk=467103.467103&q=$(echo $text | sed "s/[\"'<>]//g")")"
+#translate='[{"name":"foo"},{"name":"bar"}]'
+
+
+echo "Original:"  >> /tmp/notitrans
+echo -e "Original text:" "$text"'\n' > /tmp/notitrans
+echo "\n"  >> /tmp/notitrans
+echo "Переведенный текст:"  >> /tmp/notitrans
+echo "$translate" | jq ".sentences" | jq -c ".[].trans" >> /tmp/notitrans
+
+echo "\n"  >> /tmp/notitrans
+echo "Дополнительно:"  >> /tmp/notitrans
+echo "$translate" | jq ".dict" | jq -c '.[] | .pos + "\n", (.terms | .[])' >> /tmp/notitrans
+
+
+#echo "$translate" >> /tmp/notitrans
+zenity --text-info --title="Translation" --filename=/tmp/notitrans
+rm -f /tmp/notitrans
+

@@ -27,7 +27,10 @@ font pango:monospace 8
 # font, it doesn’t scale on retina/hidpi displays.
 
 #language switcher 
-exec "setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'"
+exec "setxkbmap -layout 'us,ru' -option 'grp:caps_toggle' -option 'grp_led:caps'"
+
+#CopyQ
+exec "copyq"
 
 #shutter
 exec "shutter --min_at_startup"
@@ -116,6 +119,12 @@ bindsym $mod+Ctrl+Up exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym $mod+Ctrl+button5 exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym $mod+Ctrl+Down exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym $mod+Ctrl+a exec --no-startup-id pactl set-sink-mute 0 toggle
+
+#OCR translator
+bindsym $mod+Ctrl+z --release exec ocr
+bindsym $mod+Shift+z --release exec rocr
+bindsym $mod+Ctrl+Shift+z exec translator
+bindsym Ctrl+Shift+a exec keymaper
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
