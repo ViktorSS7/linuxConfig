@@ -28,6 +28,7 @@ font pango:monospace 8
 
 #language switcher 
 exec "setxkbmap -layout 'us,ru' -option 'grp:caps_toggle' -option 'grp_led:caps'"
+exec "xxkb &"
 
 #CopyQ
 exec "copyq"
