@@ -25,7 +25,7 @@ xkb_keymap {
 	    
 	    symbols[group1] =[ ISO_Prev_Group ],
 	    symbols[group2] =[ ISO_Next_Group ],
-	    symbols[group3] =[ ISO_Last_Group ]	
+	    symbols[group3] =[ ISO_Next_Group ]	
 	};
 	
     };
